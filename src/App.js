@@ -189,7 +189,7 @@ const DisplayHistory = ({history}) => {
               console.log(`Good added, id: ${index}`);
               return <span className="good-pill pill appearIn" key={index} data-id={index} >Good</span>;
             case 'excellent':
-              console.log(`Excellent added, id: ${index}`);
+              console.log(`Excellent added, id#: ${index}`);
               return <span className="excellent-pill pill excellentMotion" key={index} data-id={index} >Excellent</span>;
             default:
               return 'this is empty';
