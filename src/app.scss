@@ -13,14 +13,14 @@
 // **** Pills Variables' Styles ****
 
 // background colors
-$bad-back : rgb(255, 166, 166);
-$good-back: rgb(161, 232, 163);
-$excellent-back: rgb(166, 197, 255);
+$bad-back : #ED8282;
+$good-back: #77C2AD;
+$excellent-back: #25A4E2;
 
 // text colors
-$bad-txt: rgb(53, 0, 0);
-$good-txt: rgb(0, 53, 3);
-$excellent-txt: rgb(1, 0, 53);
+$bad-txt: #501515;
+$good-txt: #2b4941;
+$excellent-txt: #0d354a;
 
 
 
@@ -278,6 +278,7 @@ $excellent-txt: rgb(1, 0, 53);
 
 .no-pointer {
   pointer-events: none;
+  opacity: 0.7;
 }
 
 
