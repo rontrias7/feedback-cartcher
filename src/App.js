@@ -61,7 +61,8 @@ function App() {
       <section className="right-bar">
         <div className="main-card">
           
-          <img className='logo' src={fc_hor_logo} alt="Feedback catcher logo"></img>
+
+        <img className='logo' src={fc_hor_logo} alt="Feedback catcher logo"></img>
           
 
           <ButtonXP className="button bad" onClick={handleText} mood="bad" text={<IconContext.Provider value={{ color: "black", className: "no-pointer", size: "3em" }}><RiEmotionUnhappyLine /></IconContext.Provider>} />
@@ -157,9 +158,9 @@ const TotalAndAverage = ({results: {bad, good, excellent}}) => {
 const DisplayHistory = ({history}) => {
 
   const welcomeMessage = <div>
-                          <h4>Welcome to Feedback Catcher! </h4>
-                          <p>To start add a few items tapping the buttons in the left panel.</p>
-                          <p>It's just a learning project. <br/> If you want to send me some feedback email me at: <a href="mailto:rontrias7@gmail.com" rel="noreferrer" target="_blank">rontrias7@gmail.com</a></p>
+                          <h4>Welcome to Feedback Catcher! </h4> <br/>
+                          <p>To start, add a few items taping the buttons in the left panel.</p>
+                          <p>It's just a learning project. <br/> If you want to send me some feedback email me at: rontrias7@gmail.com</p>
                           
                           </div>
 
