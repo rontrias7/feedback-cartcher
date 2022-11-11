@@ -157,7 +157,7 @@ const DisplayHistory = ({history}) => {
 
   const welcomeMessage = <div>
                           <h4>Welcome to Feedback Catcher! </h4> <br/>
-                          <p>To start, add a few items taping the buttons in the left panel.</p>
+                          <p>To start, add a few items tapping the buttons in the left panel.</p>
                           <p>It's just a learning project. <br/> If you want to send me some feedback email me at: rontrias7@gmail.com</p>
                           
                           </div>
