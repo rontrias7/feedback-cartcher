@@ -6,6 +6,7 @@ import {BiHappyAlt} from 'react-icons/bi';
 import {RiEmotionUnhappyLine} from 'react-icons/ri';
 import {TbMoodCrazyHappy} from 'react-icons/tb';
 import {GiPlainCircle} from 'react-icons/gi';
+import fc_hor_logo from './fc_hor_logo.svg'
 
 
 // importing the Context of react-icons to change its properties
@@ -60,7 +61,7 @@ function App() {
       <section className="right-bar">
         <div className="main-card">
           
-          <h1 className="main-title">Feedback Catcher</h1>
+          <img className='logo' src={fc_hor_logo} alt="Feedback catcher logo"></img>
           
 
           <ButtonXP className="button bad" onClick={handleText} mood="bad" text={<IconContext.Provider value={{ color: "black", className: "no-pointer", size: "3em" }}><RiEmotionUnhappyLine /></IconContext.Provider>} />
@@ -156,9 +157,9 @@ const TotalAndAverage = ({results: {bad, good, excellent}}) => {
 const DisplayHistory = ({history}) => {
 
   const welcomeMessage = <div>
-                          <h4>Welcome to Feedback Catcher! </h4> <br/>
+                          <h4>Welcome to Feedback Catcher! </h4>
                           <p>To start, add a few items tapping the buttons in the left panel.</p>
-                          <p>It's just a learning project. <br/> If you want to send me some feedback email me at: rontrias7@gmail.com</p>
+                          <p>It's just a learning project. <br/> If you want to send me some feedback email me at: <a href="mailto:rontrias7@gmail.com" rel="noreferrer" target="_blank">rontrias7@gmail.com</a></p>
                           
                           </div>
 
