@@ -102,7 +102,8 @@ const StatisticsContainer = ({results}) => {
           <Display  results={results}/>
           <hr className="divider" />
           <div className='total-quant-stats'>
-            <TotalAndAverage results={results} />
+            <Average results={results} />
+            <Total results={results} />
           </div>
       </div>
 
@@ -136,11 +137,8 @@ const ButtonXP = ({text, onClick, className, mood}) => <button className={classN
 
 
 
-const TotalAndAverage = ({results: {bad, good, excellent}}) => {
-  
-  const averageMood = Math.floor(((bad*10+good*100+excellent*1000)/(bad+good+excellent))/10 ) + 0;
-
-  return [
+const Total = ({results: {bad, good, excellent}}) => {
+return (
 
   // conditional rendering, if component has no values then render 'No data yet', else do it work
   <p>Total Results <br /> <span className="numbers">
@@ -148,17 +146,32 @@ const TotalAndAverage = ({results: {bad, good, excellent}}) => {
    bad + good + excellent
   : 'No data'}
  
-  </span></p>, <p>Mood <br /> <span className="numbers">{!averageMood? 'No data' : `${averageMood}%` }</span></p>
+  </span></p>
 
-  ]
+  )
 
+}
+
+
+
+
+
+const Average = ({results: {bad, good, excellent}}) => {
   
+  const averageMood = Math.floor(((bad*10+good*100+excellent*1000)/(bad+good+excellent))/10 ) + 0;
+
+  return (
+
+<p>Mood <br /> <span className="numbers">{!averageMood? 'No data' : `${averageMood}%` }</span></p>
+
+  )
+
 }
 
 
 const DisplayHistory = ({history}) => {
 
-  const welcomeMessage = <div class="presentation">
+  const welcomeMessage = <div className="presentation">
                           <h4>Welcome to Feedback Catcher! </h4>
                           <p>To start, add a few items taping the buttons in the left panel.<br/>
                           It's just a learning project. <br/> If you want to send me some feedback email me at: rontrias7@gmail.com</p>
@@ -183,15 +196,15 @@ const DisplayHistory = ({history}) => {
 
             case 'bad':
               console.log(`Bad added, id: ${index}`);
-              return  <span className="bad-pill pill somethingWrong" key={index*3+5} data-id={index} >Bad</span>;
+              return  <span key={index+353} className="bad-pill pill somethingWrong"  data-id={index} >Bad</span>;
             case 'good':
               console.log(`Good added, id: ${index}`);
-              return <span className="good-pill pill appearIn" key={index*3+5} data-id={index} >Good</span>;
+              return <span key={index+234} className="good-pill pill appearIn"  data-id={index} >Good</span>;
             case 'excellent':
               console.log(`Excellent added, id#: ${index}`);
-              return <span className="excellent-pill pill excellentMotion" key={index*3+5} data-id={index} >Excellent</span>;
+              return <span key={index+1213} className="excellent-pill pill excellentMotion" data-id={index} >Excellent</span>;
             default:
-              return 'this is empty';
+              return <p key={index}>'this is empty'</p>;
 
           }
 
