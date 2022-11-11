@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import './app.scss';
+import ButtonXP from './components/ButtonXP';
+import StatisticsContainer from './components/StatisticsContainer';
+import DisplayHistory from './components/DisplayHistory';
 
 // importing icons from reacticons
 import {BiHappyAlt} from 'react-icons/bi';
 import {RiEmotionUnhappyLine} from 'react-icons/ri';
 import {TbMoodCrazyHappy} from 'react-icons/tb';
-import {GiPlainCircle} from 'react-icons/gi';
 import fc_hor_logo from './fc_hor_logo.svg'
 
 
@@ -93,127 +95,18 @@ function App() {
 }
 
 
-const StatisticsContainer = ({results}) => {
 
-
-    return (
-      <div className="statistics-card">
-          <h3 className="subtitle" >Statistics</h3>
-          <Display  results={results}/>
-          <hr className="divider" />
-          <div className='total-quant-stats'>
-            <Average results={results} />
-            <Total results={results} />
-          </div>
-      </div>
-
-    );
-
-
-    
-}
 
 
  
-const Display = ({results: {bad, good, excellent}}) =>{
-
-  
-  return(
-  <div className="ind-quant-stats">
-
-    <p><IconContext.Provider value={{ className: "no-pointer bad-dot", size: "0.7em" }}><GiPlainCircle /></IconContext.Provider> Bads <br /> <span className="numbers">{bad}</span></p>
-    <p><IconContext.Provider value={{ className: "no-pointer good-dot", size: "0.7em" }}><GiPlainCircle /></IconContext.Provider> Goods <br /> <span className="numbers">{good}</span></p>
-    <p><IconContext.Provider value={{ className: "no-pointer excellent-dot", size: "0.7em" }}><GiPlainCircle /></IconContext.Provider> Excellent <br /> <span className="numbers">{excellent}</span></p>
-
-  </div>
-
-  );
-  }
-
-
-// prop mood refers to the meaning of the button: bad, good & excellent
-const ButtonXP = ({text, onClick, className, mood}) => <button className={className} onClick={onClick} value={mood}>{text} {mood}</button>
-
-
-
-
-const Total = ({results: {bad, good, excellent}}) => {
-return (
-
-  // conditional rendering, if component has no values then render 'No data yet', else do it work
-  <p>Total Results <br /> <span className="numbers">
-  {bad+good+excellent > 0 ?
-   bad + good + excellent
-  : 'No data'}
- 
-  </span></p>
-
-  )
-
-}
 
 
 
 
 
-const Average = ({results: {bad, good, excellent}}) => {
-  
-  const averageMood = Math.floor(((bad*10+good*100+excellent*1000)/(bad+good+excellent))/10 ) + 0;
-
-  return (
-
-<p>Mood <br /> <span className="numbers">{!averageMood? 'No data' : `${averageMood}%` }</span></p>
-
-  )
-
-}
 
 
-const DisplayHistory = ({history}) => {
 
-  const welcomeMessage = <div className="presentation">
-                          <h4>Welcome to Feedback Catcher! </h4>
-                          <p>To start, add a few items taping the buttons in the left panel.<br/>
-                          It's just a learning project. <br/> If you want to send me some feedback email me at: rontrias7@gmail.com</p>
-                          
-                          </div>
-
-  return (
-
-      
-      <>
-
-
-      {/* Conditional rendering of the welcome text */}
-      {history.length === 0 ? welcomeMessage : ''}
-
-
-      {/* Rendering of the pills using switch */}
-    {history.map( (item, index) => {
-
-              
-          switch(item){
-
-            case 'bad':
-              console.log(`Bad added, id: ${index}`);
-              return  <span key={index+353} className="bad-pill pill somethingWrong"  data-id={index} >Bad</span>;
-            case 'good':
-              console.log(`Good added, id: ${index}`);
-              return <span key={index+234} className="good-pill pill appearIn"  data-id={index} >Good</span>;
-            case 'excellent':
-              console.log(`Excellent added, id#: ${index}`);
-              return <span key={index+1213} className="excellent-pill pill excellentMotion" data-id={index} >Excellent</span>;
-            default:
-              return <p key={index}>'this is empty'</p>;
-
-          }
-
-      })}
-    </>
-
-  )
-
-}
 
 
 
