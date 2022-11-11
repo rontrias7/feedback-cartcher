@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './app.scss';
+import './app.css';
 
 // importing icons from reacticons
 import {BiHappyAlt} from 'react-icons/bi';
