@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import './app.scss';
 
 // importing icons from reacticons
@@ -55,10 +55,6 @@ function App() {
  } 
 
 
-
-
-
-
   return (
     <div className="global-container">
       <section className="right-bar">
@@ -68,7 +64,7 @@ function App() {
           
 
           <ButtonXP className="button bad" onClick={handleText} mood="bad" text={<IconContext.Provider value={{ color: "black", className: "no-pointer", size: "3em" }}><RiEmotionUnhappyLine /></IconContext.Provider>} />
-          {/* <ButtonXP className="button bad" onClick={handleText} mood="bad" text="Bad" />  Deprecated because of icons */}
+          {/*<ButtonXP className="button bad" onClick={handleText} mood="bad" text="Bad" />  Deprecated because of icons */}
           
           <ButtonXP className="button good" onClick={handleText} mood="good" text={<IconContext.Provider value={{ color: "black", className: "no-pointer", size: "3em" }}><BiHappyAlt /></IconContext.Provider>} />
           {/*<ButtonXP className="button good" onClick={handleText} mood="good" text="Good" />   Deprecated because of icons */}
