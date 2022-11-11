@@ -173,15 +173,29 @@ $excellent-txt: #0d354a;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 2;
   @include card();
+  transition: all 0.5s ease-in;
+  
+}
+
+.main-card:hover, .statistics-card:hover {
+
+
+  box-shadow: 0px 4px 10px rgba(88, 88, 88, 0.171);
   
 
 }
+
+
+
+
+
 
 
 .statistics-card {
 
   @include card();
   max-width: 300px;
+  transition: all 0.5s ease-in;
 
 }
 
