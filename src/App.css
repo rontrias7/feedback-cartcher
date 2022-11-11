@@ -1,8 +1,196 @@
 * {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.bad-dot {
+  color: rgb(255, 166, 166);
+}
+
+.good-dot {
+  color: rgb(161, 232, 163);
+}
+
+.excellent-dot {
+  color: rgb(166, 184, 255);
+}
+
+.numbers {
+  font-size: 2em;
+}
+
+@-webkit-keyframes appearIn {
+  0% {
+    transform: scale(0) translateY(24px);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+  }
+}
+
+@keyframes appearIn {
+  0% {
+    transform: scale(0) translateY(24px);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+  }
+}
+@-webkit-keyframes somethingWrong {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    transform: rotate(20deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes somethingWrong {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    transform: rotate(20deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes excellentMotion {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes excellentMotion {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.appearIn {
+  -webkit-animation: appearIn 0.5s ease-in-out both;
+          animation: appearIn 0.5s ease-in-out both;
+}
+
+.somethingWrong {
+  -webkit-animation: somethingWrong 0.5s ease-in-out both;
+          animation: somethingWrong 0.5s ease-in-out both;
+}
+
+.excellentMotion {
+  -webkit-animation: excellentMotion 0.5s ease-in-out both;
+          animation: excellentMotion 0.5s ease-in-out both;
+}
+
+.global-container {
+  display: grid;
+  grid-template-columns: auto 3fr;
+}
+
+.right-bar {
+  top: 0px;
+  height: 100vh;
+  grid-column: 1;
+  border-right: 1px solid rgba(128, 128, 128, 0.309);
+  padding: 4px;
+}
+
+.history-area {
+  display: inline-flex;
+  grid-column: 2/3;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 4px;
+  height: 100vh;
+}
+
+.main-card {
+  display: grid;
+  max-width: 300px;
+  justify-items: stretch;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2;
+  background-color: #f4f4f4;
+  border-radius: 32px;
+  padding: 32px;
+  margin: 8px;
+  box-shadow: solid 2px 0px 4px rgba(0, 0, 0, 0.359);
+}
+
+.statistics-card {
+  background-color: #f4f4f4;
+  border-radius: 32px;
+  padding: 32px;
+  margin: 8px;
+  box-shadow: solid 2px 0px 4px rgba(0, 0, 0, 0.359);
+  max-width: 300px;
+}
+
+.main-title {
+  grid-column: 1/4;
+  justify-self: center;
 }
 
 .button {
+  grid-row: 2;
   border-radius: 16px;
   padding: 16px;
   margin: 8px;
@@ -15,7 +203,17 @@
   border-radius: 16px;
   padding: 16px;
   margin: 8px;
-  outline-color: rgb(188, 80, 80);
+  outline-color: rgb(199, 199, 199);
+}
+
+.pill {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.pill:hover {
+  box-shadow: 2px 4px 8px rgba(53, 53, 53, 0.353);
+  border-radius: 8px;
 }
 
 .bad {
@@ -27,14 +225,51 @@
 
 .good {
   color: rgb(0, 53, 3);
-  background-color: rgb(166, 255, 167);
+  background-color: rgb(161, 232, 163);
   outline-color: transparent;
   transition: all 0.3s ease-in-out;
 }
 
 .excellent {
   color: rgb(1, 0, 53);
-  background-color: rgb(173, 166, 255);
+  background-color: rgb(166, 184, 255);
   outline-color: transparent;
   transition: all 0.3s ease-in-out;
+}
+
+.bad:hover, .good:hover, .excellent:hover {
+  box-shadow: 2px 4px 8px rgba(137, 137, 137, 0.353);
+}
+
+.no-pointer {
+  pointer-events: none;
+}
+
+.bad-pill {
+  padding: 8px;
+  margin: 4px;
+  border-radius: 16px;
+  background-color: rgb(255, 166, 166);
+  color: rgb(53, 0, 0);
+}
+
+.good-pill {
+  padding: 8px;
+  margin: 4px;
+  border-radius: 16px;
+  background-color: rgb(161, 232, 163);
+  color: rgb(0, 53, 3);
+}
+
+.excellent-pill {
+  padding: 8px;
+  margin: 4px;
+  border-radius: 16px;
+  background-color: rgb(166, 184, 255);
+  color: rgb(1, 0, 53);
+}
+
+footer {
+  background-color: rgb(166, 184, 255);
+  grid-row: 2;
 }/*# sourceMappingURL=app.css.map */
