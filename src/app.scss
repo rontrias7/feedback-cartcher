@@ -192,6 +192,8 @@ $excellent-txt: #0d354a;
 }
 
 
+
+
 // feedback buttons
 .button{
   grid-row: 2;
@@ -308,6 +310,31 @@ $excellent-txt: #0d354a;
   background-color: $excellent-back;
   color: $excellent-txt;
   
+
+
+}
+
+
+.ind-quant-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.total-quant-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+
+.divider {
+
+  margin: 16px 0;
+  opacity: 0.5;
+}
+
+.subtitle {
+  margin: 0 0 16px 0;
 }
 
 

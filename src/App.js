@@ -81,9 +81,7 @@ function App() {
       </section>
       <section className="history-area">
 
-
-       
-        <DisplayHistory history={history} />
+      <DisplayHistory history={history} />
 
       </section>
 
@@ -100,9 +98,12 @@ const StatisticsContainer = ({results}) => {
 
     return (
       <div className="statistics-card">
-          <h3>Statistics</h3>
+          <h3 className="subtitle" >Statistics</h3>
           <Display  results={results}/>
-          <TotalAndAverage results={results} />
+          <hr className="divider" />
+          <div className='total-quant-stats'>
+            <TotalAndAverage results={results} />
+          </div>
       </div>
 
     );
@@ -117,13 +118,13 @@ const Display = ({results: {bad, good, excellent}}) =>{
 
   
   return(
-  <>
+  <div className="ind-quant-stats">
 
-    <p><IconContext.Provider value={{ className: "no-pointer bad-dot", size: "0.7em" }}><GiPlainCircle /></IconContext.Provider> Bads <br /> <span className="numbers">{bad}</span> <br/> <br/>
-    <IconContext.Provider value={{ className: "no-pointer good-dot", size: "0.7em" }}><GiPlainCircle /></IconContext.Provider> Goods <br /> <span className="numbers">{good}</span><br/> <br/>
-    <IconContext.Provider value={{ className: "no-pointer excellent-dot", size: "0.7em" }}><GiPlainCircle /></IconContext.Provider> Excellent <br /> <span className="numbers">{excellent}</span> <br/><br/></p>
+    <p><IconContext.Provider value={{ className: "no-pointer bad-dot", size: "0.7em" }}><GiPlainCircle /></IconContext.Provider> Bads <br /> <span className="numbers">{bad}</span></p>
+    <p><IconContext.Provider value={{ className: "no-pointer good-dot", size: "0.7em" }}><GiPlainCircle /></IconContext.Provider> Goods <br /> <span className="numbers">{good}</span></p>
+    <p><IconContext.Provider value={{ className: "no-pointer excellent-dot", size: "0.7em" }}><GiPlainCircle /></IconContext.Provider> Excellent <br /> <span className="numbers">{excellent}</span></p>
 
-  </>
+  </div>
 
   );
   }
@@ -182,13 +183,13 @@ const DisplayHistory = ({history}) => {
 
             case 'bad':
               console.log(`Bad added, id: ${index}`);
-              return  <span className="bad-pill pill somethingWrong" key={index} data-id={index} >Bad</span>;
+              return  <span className="bad-pill pill somethingWrong" key={index*3+5} data-id={index} >Bad</span>;
             case 'good':
               console.log(`Good added, id: ${index}`);
-              return <span className="good-pill pill appearIn" key={index} data-id={index} >Good</span>;
+              return <span className="good-pill pill appearIn" key={index*3+5} data-id={index} >Good</span>;
             case 'excellent':
               console.log(`Excellent added, id#: ${index}`);
-              return <span className="excellent-pill pill excellentMotion" key={index} data-id={index} >Excellent</span>;
+              return <span className="excellent-pill pill excellentMotion" key={index*3+5} data-id={index} >Excellent</span>;
             default:
               return 'this is empty';
 
