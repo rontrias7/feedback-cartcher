@@ -60,7 +60,7 @@ function App() {
       <section className="right-bar">
         <div className="main-card">
           
-          <h1 className="main-title">Feedback Catcher</h1>
+          <h1 className="main-title">Feedback Catcher 1.0</h1>
           
 
           <ButtonXP className="button bad" onClick={handleText} mood="bad" text={<IconContext.Provider value={{ color: "black", className: "no-pointer", size: "3em" }}><RiEmotionUnhappyLine /></IconContext.Provider>} />
