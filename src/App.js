@@ -3,6 +3,7 @@ import './app.scss';
 import ButtonXP from './components/ButtonXP';
 import StatisticsContainer from './components/StatisticsContainer';
 import DisplayHistory from './components/DisplayHistory';
+import ContactBar from './components/ContactBar';
 
 // importing icons from reacticons
 import {BiHappyAlt} from 'react-icons/bi';
@@ -78,8 +79,10 @@ function App() {
         </div>
         
       
-      
       <StatisticsContainer results={results}/>
+
+      <ContactBar />
+
       </section>
       <section className="history-area">
 

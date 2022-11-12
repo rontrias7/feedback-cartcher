@@ -1,12 +1,14 @@
 
+import feedbackEmpty from "../feedback-empty.svg";
+
+
 
 const DisplayHistory = ({history}) => {
 
   const welcomeMessage = <div className="presentation">
-                          <h4>Welcome to Feedback Catcher! </h4>
-                          <p>To start, add a few items taping the buttons in the left panel.<br/>
-                          It's just a learning project. <br/> If you want to send me some feedback email me at: rontrias7@gmail.com</p>
-                          
+                          <p>Hello! The History zone is still empty. <br/>
+                          To add some registers please go to the left side area.</p>
+                          <img className="feedback-ill" src={feedbackEmpty} alt="no feedback illustration"></img>
                           </div>
 
   return (

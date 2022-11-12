@@ -194,6 +194,20 @@ $excellent-txt: #0d354a;
 
 }
 
+
+.contact-bar {
+
+  @include card();
+  display: flex;
+  align-items:center;
+
+}
+
+.contact-bar a {
+
+  padding: 8px;
+}
+
 .main-title {
   grid-column: 1/4;
   justify-self: center;
@@ -201,6 +215,12 @@ $excellent-txt: #0d354a;
 }
 
 
+// Feedback Illustration
+.feedback-ill {
+
+  max-width: 400px;
+  margin: 16px 0px;
+}
 
 
 // feedback buttons
@@ -358,6 +378,7 @@ footer {
 // PRESENTATION
 
 .presentation {
-  color:rgb(0, 53, 3);
+  color:rgb(115, 115, 115);
   padding: 16px;
+  margin: 40px;
 }

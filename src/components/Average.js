@@ -5,7 +5,7 @@ const Average = ({results: {bad, good, excellent}}) => {
 
   return (
 
-<p>Mood <br /> <span className="numbers">{!averageMood? 'No data' : `${averageMood}%` }</span></p>
+<p>Mood Status<br /> <span className="numbers">{!averageMood? 'No data' : `${averageMood}%` }</span></p>
 
   )
 
